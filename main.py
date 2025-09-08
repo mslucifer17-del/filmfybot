@@ -9,7 +9,8 @@ def main():
     app.add_handler(CommandHandler("start", start))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(CallbackQueryHandler(handle_callback, pattern="^movie_"))
-    app.run_polling()
+    logger.info("Bot started")
+    app.run_polling(drop_pending_updates=True, close_loop=False)
 
 if __name__ == "__main__":
     main()
