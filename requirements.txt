@@ -1,6 +1,5 @@
 python-telegram-bot[ext]==20.7
-psycopg2-binary==3.11.9
+psycopg2-binary==2.9.10      # ← 2.x series, latest binary wheel
 google-generativeai
 google-api-python-client
 thefuzz
-python-dotenv          # local test के लिए
