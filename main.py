@@ -1,7 +1,14 @@
+import logging
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, CallbackQueryHandler
 from config import TELEGRAM_BOT_TOKEN
 from bot_handlers import start, handle_message, handle_callback
 from database import init_db
+
+logging.basicConfig(
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    level=logging.INFO,
+)
+logger = logging.getLogger(__name__)
 
 def main():
     init_db()
