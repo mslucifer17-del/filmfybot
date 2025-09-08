@@ -1,8 +1,9 @@
 import psycopg2
+from psycopg2 import pool          # <-- ये लाइन जोड़ी
 from contextlib import asynccontextmanager
 from config import DATABASE_URL
 
-db_pool = psycopg2.pool.SimpleConnectionPool(1, 20, DATABASE_URL)
+db_pool = pool.SimpleConnectionPool(1, 20, DATABASE_URL)   # <-- अब pool. से call
 
 @asynccontextmanager
 async def db_cursor():
